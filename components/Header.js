@@ -102,7 +102,7 @@ export default function Header() {
             </Link>
           </LeftSideIcons>
 
-          <Logo href={"/products"}>
+          <Logo href={"/"}>
             <img src="https://firebasestorage.googleapis.com/v0/b/zayd-ecommerce.appspot.com/o/assets%2FIMPORTANT.png?alt=media&token=35d13ea4-a19a-410c-ab20-df8e18b093a5" alt="Logo Home" />
           </Logo>
 

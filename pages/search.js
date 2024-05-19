@@ -53,10 +53,10 @@ export default function SearchPage() {
             autoFocus
             value={phrase}
             onChange={ev => setPhrase(ev.target.value)}
-            placeholder="Search for products..." />
+            placeholder="Rechercher des produits..." />
         </InputWrapper>
         {!isLoading && phrase !== '' && products.length === 0 && (
-          <h2>No products found for query "{phrase}"</h2>
+          <h2>Aucun produit ne correspond "{phrase}"</h2>
         )}
         {isLoading && (
           <Spinner fullWidth={true} />

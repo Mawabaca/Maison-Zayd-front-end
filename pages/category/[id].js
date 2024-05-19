@@ -28,6 +28,7 @@ const Filter = styled.div`
   display: flex;
   gap: 5px;
   color:#444;
+  display: inline-block;
   select{
     background-color:transparent;
     border:0;
@@ -98,17 +99,17 @@ export default function CategoryPage({
               </Filter>
             ))}
             <Filter>
-              <span>Sort:</span>
+              <span>Trier par:</span>
               <select
                 value={sort}
                 onChange={ev => {
                   setSort(ev.target.value);
                   setFiltersChanged(true);
                 }}>
-                <option value="price-asc">price, lowest first</option>
-                <option value="price-desc">price, highest first</option>
-                <option value="_id-desc">newest first</option>
-                <option value="_id-asc">oldest first</option>
+                <option value="price-asc">Prix: les plus bas en premier</option>
+                <option value="price-desc">Prix: les plus élevé en premier</option>
+                <option value="_id-desc">Les plus récents</option>
+                <option value="_id-asc">Les plus anciens</option>
               </select>
             </Filter>
           </FiltersWrapper>
@@ -122,7 +123,7 @@ export default function CategoryPage({
               <ProductsGrid products={products} />
             )}
             {products.length === 0 && (
-              <div>Sorry, no products found</div>
+              <div>Désolé, aucun produit trouvé</div>
             )}
           </div>
         )}

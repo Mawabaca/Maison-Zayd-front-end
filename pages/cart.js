@@ -159,8 +159,8 @@ export default function CartPage() {
         <Center>
           <ColumnsWrapper>
             <Box>
-              <h1>Thanks for your order!</h1>
-              <p>We will email you when your order will be sent.</p>
+              <h1>Merci pour votre commande!</h1>
+              <p>Nous vous enverrons un e-mail lorsque votre commande sera envoyée.</p>
             </Box>
           </ColumnsWrapper>
         </Center>
@@ -232,7 +232,7 @@ export default function CartPage() {
               <Box>
                 <h2>Informations sur la commande</h2>
                 <Input type="text"
-                       placeholder="Name"
+                       placeholder="Nom"
                        value={name}
                        name="name"
                        onChange={ev => setName(ev.target.value)} />
@@ -243,23 +243,23 @@ export default function CartPage() {
                        onChange={ev => setEmail(ev.target.value)}/>
                 <CityHolder>
                   <Input type="text"
-                         placeholder="City"
+                         placeholder="Ville"
                          value={city}
                          name="city"
                          onChange={ev => setCity(ev.target.value)}/>
                   <Input type="text"
-                         placeholder="Postal Code"
+                         placeholder="Code postal"
                          value={postalCode}
                          name="postalCode"
                          onChange={ev => setPostalCode(ev.target.value)}/>
                 </CityHolder>
                 <Input type="text"
-                       placeholder="Street Address"
+                       placeholder="Adresse"
                        value={streetAddress}
                        name="streetAddress"
                        onChange={ev => setStreetAddress(ev.target.value)}/>
                 <Input type="text"
-                       placeholder="Country"
+                       placeholder="Pays"
                        value={country}
                        name="country"
                        onChange={ev => setCountry(ev.target.value)}/>
