@@ -79,35 +79,35 @@ export default function ProductReviews({product}) {
   }
   return (
     <div>
-      <Title>Reviews</Title>
+      <Title>Avis</Title>
       <ColsWrapper>
         <div>
           <WhiteBox>
-            <Subtitle>Add a review</Subtitle>
+            <Subtitle>Ajouter un commentaire</Subtitle>
             <div>
               <StarsRating onChange={setStars} />
             </div>
             <Input
               value={title}
               onChange={ev => setTitle(ev.target.value)}
-              placeholder="Title" />
+              placeholder="Titre" />
             <Textarea
               value={description}
               onChange={ev => setDescription(ev.target.value)}
-              placeholder="Was it good? Pros? Cons?" />
+              placeholder="Avis" />
             <div>
-              <Button primary onClick={submitReview}>Submit your review</Button>
+              <Button primary onClick={submitReview}>Soumettez votre avis</Button>
             </div>
           </WhiteBox>
         </div>
         <div>
           <WhiteBox>
-            <Subtitle>All reviews</Subtitle>
+            <Subtitle>Tous les avis</Subtitle>
             {reviewsLoading && (
               <Spinner fullWidth={true} />
             )}
             {reviews.length === 0 && (
-              <p>No reviews :(</p>
+              <p>Aucun avis :(</p>
             )}
             {reviews.length > 0 && reviews.map(review => (
               <ReviewWrapper>

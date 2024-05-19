@@ -24,10 +24,10 @@ const Logo = styled(Link)`
   display: flex;
   align-items: center;
   img {
-    height: auto; /* Ajuster automatiquement la hauteur */
-    max-height: 150px; /* Hauteur maximale du logo */
-    width: auto; /* Ajuster la largeur automatiquement pour conserver les proportions */
-    transition: max-height 0.3s ease; /* Ajouter une transition fluide */
+    height: auto; 
+    max-height: 140px; 
+    width: auto; 
+    transition: max-height 0.3s ease; 
   }
 `;
 
@@ -44,11 +44,11 @@ const StyledNav = styled.nav`
   gap: 15px;
   position: fixed;
   top: 0;
-  left: ${({ isOpen }) => (isOpen ? "0" : "-300px")}; /* Hide the nav initially */
+  left: ${({ isOpen }) => (isOpen ? "0" : "-300px")}; 
   bottom: 0;
-  width: 300px; /* Set the width of the off-canvas */
+  width: 300px; 
   background-color: #222;
-  transition: left 0.3s ease; /* Add smooth transition */
+  transition: left 0.3s ease; 
   z-index: 100;
 `;
 
@@ -70,7 +70,7 @@ const LeftSideIcons = styled.div`
     display: inline-block;
     min-width: 25px;
     color: white;
-    margin-left: 10px; /* Add margin between icons */
+    margin-left: 10px; 
   }
 `;
 
@@ -81,7 +81,7 @@ const RightSideIcons = styled.div`
     display: inline-block;
     min-width: 25px;
     color: white;
-    margin-left: 10px; /* Add margin between icons */
+    margin-left: 10px; 
   }
 `;
 
@@ -103,7 +103,6 @@ export default function Header() {
           </LeftSideIcons>
 
           <Logo href={"/products"}>
-            {/* Utilisez next/image pour charger et afficher l'image */}
             <img src="https://firebasestorage.googleapis.com/v0/b/zayd-ecommerce.appspot.com/o/assets%2FIMPORTANT.png?alt=media&token=35d13ea4-a19a-410c-ab20-df8e18b093a5" alt="Logo Home" />
           </Logo>
 
