@@ -1,17 +1,15 @@
 import styled from "styled-components";
-import Button, {ButtonStyle} from "@/components/Button";
-import CartIcon from "@/components/icons/CartIcon";
 import Link from "next/link";
-import {useContext, useEffect, useState} from "react";
-import {CartContext} from "@/components/CartContext";
-import {primary} from "@/lib/colors";
+import { useContext, useEffect, useState } from "react";
 import FlyingButton from "@/components/FlyingButton";
 import HeartOutlineIcon from "@/components/icons/HeartOutlineIcon";
 import HeartSolidIcon from "@/components/icons/HeartSolidIcon";
 import axios from "axios";
+import { useSession } from "next-auth/react";
+import Swal from "sweetalert2";
 
 const ProductWrapper = styled.div`
-  button{
+  button {
     width: 100%;
     text-align: center;
     justify-content: center;
@@ -27,7 +25,7 @@ const WhiteBox = styled(Link)`
   justify-content: center;
   border-radius: 10px;
   position: relative;
-  img{
+  img {
     max-width: 100%;
     max-height: 150px;
   }
@@ -35,10 +33,10 @@ const WhiteBox = styled(Link)`
 
 const Title = styled(Link)`
   font-weight: normal;
-  font-size:.9rem;
-  color:inherit;
-  text-decoration:none;
-  margin:0;
+  font-size: 0.9rem;
+  color: inherit;
+  text-decoration: none;
+  margin: 0;
 `;
 
 const ProductInfoBox = styled.div`
@@ -52,50 +50,68 @@ const PriceRow = styled.div`
     gap: 5px;
   }
   align-items: center;
-  justify-content:space-between;
-  margin-top:2px;
+  justify-content: space-between;
+  margin-top: 2px;
 `;
 
 const Price = styled.div`
   font-size: 1rem;
-  font-weight:400;
+  font-weight: 400;
   text-align: right;
   @media screen and (min-width: 768px) {
     font-size: 1.2rem;
-    font-weight:600;
+    font-weight: 600;
     text-align: left;
   }
 `;
 
 const WishlistButton = styled.button`
-  border:0;
+  border: 0;
   width: 40px !important;
   height: 40px;
   padding: 10px;
   position: absolute;
-  top:0;
-  right:0;
-  background:transparent;
+  top: 0;
+  right: 0;
+  background: transparent;
   cursor: pointer;
   ${props => props.wished ? `
-    color:red;
+    color: red;
   ` : `
-    color:black;
+    color: black;
   `}
-  svg{
+  svg {
     width: 16px;
   }
 `;
 
 export default function ProductBox({
-  _id,title,description,price,images,wished=false,
-  onRemoveFromWishlist=()=>{},
+  _id, title, description, price, images, wished = false,
+  onRemoveFromWishlist = () => {},
 }) {
-  const url = '/product/'+_id;
-  const [isWished,setIsWished] = useState(wished);
+  const url = '/product/' + _id;
+  const [isWished, setIsWished] = useState(wished);
+  const { data: session } = useSession(); 
+
   function addToWishlist(ev) {
     ev.preventDefault();
     ev.stopPropagation();
+    if (!session) {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Oops...',
+        text: 'Vous devez vous connecter pour ajouter un produit à votre wishlist!',
+        showCancelButton: true,
+        confirmButtonText: 'Se connecter',
+        cancelButtonText: 'Annuler'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.href = '/account';
+        }
+    });
+
+      return;
+    }
     const nextValue = !isWished;
     if (nextValue === false && onRemoveFromWishlist) {
       onRemoveFromWishlist(_id);
@@ -105,6 +121,7 @@ export default function ProductBox({
     }).then(() => {});
     setIsWished(nextValue);
   }
+
   return (
     <ProductWrapper>
       <WhiteBox href={url}>
@@ -112,7 +129,7 @@ export default function ProductBox({
           <WishlistButton wished={isWished} onClick={addToWishlist}>
             {isWished ? <HeartSolidIcon /> : <HeartOutlineIcon />}
           </WishlistButton>
-          <img src={images?.[0]} alt=""/>
+          <img src={images?.[0]} alt="" />
         </div>
       </WhiteBox>
       <ProductInfoBox>
