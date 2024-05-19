@@ -85,6 +85,9 @@ const RightSideIcons = styled.div`
   }
 `;
 
+const ProductInCart = styled.span`
+`
+
 export default function Header() {
   const { cartProducts } = useContext(CartContext);
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -108,6 +111,7 @@ export default function Header() {
 
           <RightSideIcons>
             <Link href={"/account"}>
+              <span></span>
               <AccountIcon />
             </Link>
             <Link href={"/cart"}>
