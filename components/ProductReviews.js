@@ -5,8 +5,10 @@ import StarsRating from "@/components/StarsRating";
 import Textarea from "@/components/Textarea";
 import Button from "@/components/Button";
 import {useEffect, useState} from "react";
+import { useSession } from "next-auth/react";
 import axios from "axios";
 import Spinner from "@/components/Spinner";
+import Swal from "sweetalert2";
 
 const Title = styled.h2`
   font-size:1.2rem;
@@ -58,8 +60,25 @@ export default function ProductReviews({product}) {
   const [stars,setStars] = useState(0);
   const [reviews,setReviews] = useState([]);
   const [reviewsLoading,setReviewsLoading] = useState(false);
+  const { data: session } = useSession();
   function submitReview() {
-    const data = {title,description,stars,product:product._id};
+    if (!session) {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Oops...',
+        text: 'Vous devez vous connecter pour laisser un avis!',
+        showCancelButton: true,
+        confirmButtonText: 'Se connecter',
+        cancelButtonText: 'Annuler'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = '/account';
+        }
+      });
+      return; 
+    }
+
+    const data = { title, description, stars, product: product._id };
     axios.post('/api/reviews', data).then(res => {
       setTitle('');
       setDescription('');
@@ -67,16 +86,19 @@ export default function ProductReviews({product}) {
       loadReviews();
     });
   }
+
   useEffect(() => {
     loadReviews();
   }, []);
+
   function loadReviews() {
     setReviewsLoading(true);
-    axios.get('/api/reviews?product='+product._id).then(res => {
+    axios.get(`/api/reviews?product=${product._id}`).then(res => {
       setReviews(res.data);
       setReviewsLoading(false);
     });
   }
+
   return (
     <div>
       <Title>Avis</Title>
