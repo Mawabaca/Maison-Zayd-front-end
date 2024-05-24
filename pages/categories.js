@@ -41,7 +41,7 @@ const CategoryWrapper = styled.div`
 
 const ShowAllSquare = styled(Link)`
   background-color: #ddd;
-  height: 160px;
+  height: 190px;
   border-radius: 10px;
   align-items:center;
   display: flex;
