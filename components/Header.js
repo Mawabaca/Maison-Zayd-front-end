@@ -3,10 +3,12 @@ import styled from "styled-components";
 import Center from "@/components/Center";
 import { useContext, useState } from "react";
 import { CartContext } from "@/components/CartContext";
+import BarsIcon from "@/components/icons/Bars";
 import SearchIcon from "./icons/SearchIcon";
 import AccountIcon from "./icons/AccountIcon";
 import PanierIcon from "./icons/PanierIcon";
-import HamburgerMenu from "@/components/HamburgerMenu";
+import HamburgerMenu from "./HamburgerMenu";
+
 
 const StyledHeader = styled.header`
   background-color: #b8887a;
@@ -30,10 +32,23 @@ const Logo = styled(Link)`
   }
 `;
 
+const StyledNav = styled.nav`
+  display: block;
+  gap: 15px;
+  position: fixed;
+  top: 0;
+  left: ${({ isOpen }) => (isOpen ? "0" : "-300px")}; /* Hide the nav initially */
+  bottom: 0;
+  width: 300px; /* Set the width of the off-canvas */
+  background-color: #222;
+  transition: left 0.3s ease; /* Add smooth transition */
+  z-index: 100;
+`;
+
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center; 
+  align-items: center; /* Align items vertically */
   padding: 20px 0;
   max-height: 50px;
 `;
@@ -45,7 +60,7 @@ const LeftSideIcons = styled.div`
     display: inline-block;
     min-width: 25px;
     color: white;
-    margin-left: 5px; 
+    margin-left: 10px; 
   }
 `;
 
@@ -60,34 +75,8 @@ const RightSideIcons = styled.div`
   }
 `;
 
-const NavMenu = styled.nav`
-  display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
-  background-color: #b8887a;
-  position: absolute;
-  top: 70px;  
-  left: 0;
-  right: 0;
-  z-index: 9;
-
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  li {
-    margin: 10px 0;
-  }
-
-  a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-  }
-`;
+const ProductInCart = styled.span`
+`
 
 export default function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -100,22 +89,12 @@ export default function Header() {
     <StyledHeader>
       <Center>
         <Wrapper>
-
-
           <LeftSideIcons>
-          <HamburgerMenu isOpen={isNavOpen} toggle={toggleNav} />
-            <NavMenu isOpen={isNavOpen}>
-            <ul>
-              <li><Link href="/">Home</Link></li>
-              <li><Link href="/shop">Shop</Link></li>
-              <li><Link href="/about">About</Link></li>
-              <li><Link href="/contact">Contact</Link></li>
-          </ul>
-          </NavMenu>
+          <HamburgerMenu isOpen={isNavOpen} toggle={toggleNav}/>
             <Link href={"/search"}>
               <SearchIcon />
             </Link>
-        </LeftSideIcons>
+          </LeftSideIcons>
 
           <Logo href={"/"}>
             <img src="https://firebasestorage.googleapis.com/v0/b/zayd-ecommerce.appspot.com/o/assets%2FIMPORTANT.png?alt=media&token=35d13ea4-a19a-410c-ab20-df8e18b093a5" alt="Logo Home" />
@@ -131,8 +110,15 @@ export default function Header() {
             </Link>
           </RightSideIcons>
 
+          <StyledNav isOpen={isNavOpen}>
+            {/* Mettez ici vos liens de navigation */}
+          </StyledNav>
+
         </Wrapper>
       </Center>
     </StyledHeader>
   );
 }
+
+
+
