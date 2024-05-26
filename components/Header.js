@@ -2,8 +2,6 @@ import Link from "next/link";
 import styled from "styled-components";
 import Center from "@/components/Center";
 import { useContext, useState } from "react";
-import { CartContext } from "@/components/CartContext";
-import BarsIcon from "@/components/icons/Bars";
 import SearchIcon from "./icons/SearchIcon";
 import AccountIcon from "./icons/AccountIcon";
 import PanierIcon from "./icons/PanierIcon";
