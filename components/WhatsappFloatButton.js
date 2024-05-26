@@ -29,7 +29,7 @@ const WhatsappIcon = styled(FaWhatsapp)`
 
 const WhatsappFloatButton = () => {
   return (
-    <WhatsappButton href="https://wa.me/33612345678" target="_blank">
+    <WhatsappButton href="https://wa.me/33695146900" target="_blank">
       <WhatsappIcon />
     </WhatsappButton>
   );
