@@ -10,6 +10,7 @@ const BurgerMenu = styled.div`
   justify-content: center;
   cursor: pointer;
   gap: 0.3em;  
+  z-index: 101;
 `;
 
 const BurgerBar = styled.div`
