@@ -61,8 +61,9 @@ const CopyrightText = styled.p`
   text-align: center;
   color: #ffffff;
   margin: 10px 0;
-  border-top-width: 1px;
+  border-top: solid 1px;
   border-top-color: rgba(255,255,255,0.66);
+  padding-top:15px;
 `;
 
 function Footer() {
@@ -102,7 +103,7 @@ function Footer() {
         <FooterLink href="">Retour, échange et rétractation</FooterLink>
         {/* Ajoutez d'autres liens ici */}
       </FooterBlock>
-      <CopyrightText>Copyright © 2024 - Maison Zayd</CopyrightText>
+      <CopyrightText> Copyright © 2024 - Maison Zayd</CopyrightText>
     </FooterContainer>
   );
 }
