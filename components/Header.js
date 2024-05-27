@@ -73,8 +73,6 @@ const RightSideIcons = styled.div`
   }
 `;
 
-const ProductInCart = styled.span`
-`
 
 export default function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
