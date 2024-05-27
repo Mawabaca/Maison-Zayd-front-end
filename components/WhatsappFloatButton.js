@@ -15,7 +15,7 @@ const WhatsappButton = styled.a`
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  z-index: 1000;
+  z-index: 500;
   &:hover {
     background-color: #20b358;
   }
