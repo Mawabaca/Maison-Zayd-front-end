@@ -1,5 +1,4 @@
-// pages/_app.js
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { createGlobalStyle } from 'styled-components';
 import { CartContextProvider } from '@/components/CartContext';
 import { SessionProvider } from 'next-auth/react';
@@ -24,8 +23,16 @@ const GlobalStyles = createGlobalStyle`
 export default function App({ Component, pageProps: { session, ...pageProps } }) {
   const [showIntro, setShowIntro] = useState(true);
 
+  useEffect(() => {
+    const introSeen = localStorage.getItem('introSeen');
+    if (introSeen) {
+      setShowIntro(false); 
+    }
+  }, []);
+
   const handleDiscover = () => {
     setShowIntro(false);
+    localStorage.setItem('introSeen', 'true');
   };
 
   return (

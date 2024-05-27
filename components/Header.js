@@ -9,7 +9,7 @@ import HamburgerMenu from "./HamburgerMenu";
 
 
 const StyledHeader = styled.header`
-  background-color: #b8887a;
+  background-color: #AC7C6B;
   position: sticky;
   top: 0;
   z-index: 10;
