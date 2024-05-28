@@ -48,7 +48,7 @@ const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center; /* Align items vertically */
   padding: 20px 0;
-  max-height: 50px;
+  max-height: 40px;
 `;
 
 const LeftSideIcons = styled.div`
