@@ -5,8 +5,8 @@ import { SessionProvider } from 'next-auth/react';
 import WhatsappFloatButton from '@/components/WhatsappFloatButton';
 import IntroductionPage from '@/components/IntroductionPage';
 
+
 const GlobalStyles = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
   body {
     background-color: #eee;
     padding: 0;
