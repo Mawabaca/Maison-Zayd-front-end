@@ -4,6 +4,9 @@ import { CartContextProvider } from '@/components/CartContext';
 import { SessionProvider } from 'next-auth/react';
 import WhatsappFloatButton from '@/components/WhatsappFloatButton';
 import IntroductionPage from '@/components/IntroductionPage';
+import {Josefin_Slab} from 'next/font/google';
+
+const josefinslab = Josefin_Slab({ subsets: ['latin'] })
 
 
 const GlobalStyles = createGlobalStyle`
@@ -37,6 +40,7 @@ export default function App({ Component, pageProps: { session, ...pageProps } })
 
   return (
     <>
+    <main className={josefinslab.className}>
       <GlobalStyles />
       {showIntro ? (
         <IntroductionPage onDiscover={handleDiscover} />
@@ -48,6 +52,7 @@ export default function App({ Component, pageProps: { session, ...pageProps } })
           </CartContextProvider>
         </SessionProvider>
       )}
+    </main>
     </>
   );
 }

@@ -16,7 +16,7 @@ const FooterLink = styled.a`
 `;
 
 const FooterContainer = styled.div`
-  background-color: #1c1c1c;
+  background-color: #bc9757;
   color: #ffffff;
   padding: 40px 20px;
   display: flex;

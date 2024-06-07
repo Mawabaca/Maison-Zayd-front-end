@@ -7,6 +7,7 @@ const Title = styled.h2`
   margin:30px 0 20px;
   font-weight: normal;
   text-align: center;
+  
 `;
 
 export default function NewProducts({products,wishedProducts}) {
