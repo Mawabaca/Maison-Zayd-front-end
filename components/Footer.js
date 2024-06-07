@@ -54,6 +54,8 @@ const SocialIcons = styled.div`
 
 const SocialIconLink = styled.a`
   text-decoration: none;
+  color: #ffffff;
+  margin: 0 10px;
 `;
 
 const CopyrightText = styled.p`
