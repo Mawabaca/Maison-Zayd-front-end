@@ -1,6 +1,7 @@
 import Link from "next/link";
 import styled from "styled-components";
 import Center from "@/components/Center";
+import Image from "next/image";
 import { useContext, useState } from "react";
 import SearchIcon from "./icons/SearchIcon";
 import AccountIcon from "./icons/AccountIcon";
@@ -25,7 +26,7 @@ const Logo = styled(Link)`
   align-items: center;
   img {
     height: auto; 
-    max-height: 140px; 
+    max-height: 175px; 
     width: auto; 
     transition: max-height 0.3s ease; 
   }
@@ -94,7 +95,11 @@ export default function Header() {
           </LeftSideIcons>
 
           <Logo href={"/"}>
-            <img src="https://firebasestorage.googleapis.com/v0/b/zayd-ecommerce.appspot.com/o/assets%2FIMPORTANT.png?alt=media&token=35d13ea4-a19a-410c-ab20-df8e18b093a5" alt="Logo Home" />
+          <Image
+        src="https://firebasestorage.googleapis.com/v0/b/zayd-ecommerce.appspot.com/o/assets%2FIMPORTANT.png?alt=media&token=35d13ea4-a19a-410c-ab20-df8e18b093a5}"
+        alt="LogoZayd"
+        width= {500}
+        height= {500}/>
           </Logo>
 
           <RightSideIcons>

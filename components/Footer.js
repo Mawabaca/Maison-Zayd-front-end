@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import React from 'react';
+import Image from 'next/image';
 import { FaTwitterSquare, FaFacebookSquare, FaPinterestSquare, FaInstagramSquare } from 'react-icons/fa';
 
 const FooterHeader = styled.h3`
@@ -30,6 +31,21 @@ const FooterContainer = styled.div`
 const FooterBlock = styled.div`
   flex: 1 1 30%;
   margin-bottom: 20px;
+  text-align: center;
+`;
+
+const Logo = styled.div`
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  max-height: 50px; /* Define max-height for the logo container */
+  bottom: 65px;
+  img {
+    height: auto; 
+    max-height: 175px; 
+    width: auto; 
+    transition: max-height 0.3s ease; 
+  }
 `;
 
 const FooterInput = styled.input`
@@ -65,7 +81,7 @@ const CopyrightText = styled.p`
   margin: 10px 0;
   border-top: solid 1px;
   border-top-color: rgba(255,255,255,0.66);
-  padding-top:15px;
+  padding-top: 15px;
 `;
 
 function Footer() {
