@@ -2,7 +2,7 @@ import Link from "next/link";
 import styled from "styled-components";
 import Center from "@/components/Center";
 import Image from "next/image";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import SearchIcon from "./icons/SearchIcon";
 import AccountIcon from "./icons/AccountIcon";
 import PanierIcon from "./icons/PanierIcon";
@@ -26,7 +26,7 @@ const Logo = styled(Link)`
   align-items: center;
   img {
     height: auto; 
-    max-height: 175px; 
+    max-height: 155px; 
     width: auto; 
     transition: max-height 0.3s ease; 
   }
