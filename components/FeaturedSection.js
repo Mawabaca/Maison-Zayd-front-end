@@ -34,8 +34,6 @@ const CardImage = styled.img`
 `;
 
 const CardTitle = styled.div`
-  position: absolute;
-  top: 276px;
   color: white;
   padding: 10px;
   font-size: 18px;
