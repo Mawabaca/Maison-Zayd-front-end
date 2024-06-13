@@ -8,11 +8,15 @@ import {getServerSession} from "next-auth";
 import {authOptions} from "@/pages/api/auth/[...nextauth]";
 import {Setting} from "@/models/Setting";
 import Footer from "@/components/Footer";
+import FeaturedSection from "@/components/FeaturedSection";
+
+
 
 export default function HomePage({featuredProduct,newProducts,wishedNewProducts}) {
   return (
     <div>
       <Header />
+      <FeaturedSection /> {/* Include the new component */}
       <NewProducts products={newProducts} wishedProducts={wishedNewProducts} />
        <Footer />
     </div>
