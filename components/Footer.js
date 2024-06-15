@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import React from 'react';
-import Image from 'next/image';
 import { FaTwitterSquare, FaFacebookSquare, FaPinterestSquare, FaInstagramSquare } from 'react-icons/fa';
 
 const FooterHeader = styled.h3`
@@ -34,20 +33,6 @@ const FooterBlock = styled.div`
   text-align: center;
 `;
 
-const Logo = styled.div`
-  color: #fff;
-  text-decoration: none;
-  position: relative;
-  max-height: 50px; /* Define max-height for the logo container */
-  bottom: 65px;
-  img {
-    height: auto; 
-    max-height: 175px; 
-    width: auto; 
-    transition: max-height 0.3s ease; 
-  }
-`;
-
 const FooterInput = styled.input`
   width: calc(100% - 20px);
   padding: 10px;
@@ -55,10 +40,17 @@ const FooterInput = styled.input`
 `;
 
 const FooterButton = styled.button`
-  width: calc(100% - 20px);
-  padding: 10px;
-  font-size: 16px;
+  padding: 8px 18px; 
+  font-size: 18px;
+  font-weight: 500;
+  background-color: #ffffff;  
+  border: 1px  #000000; /* Set border color */
+  font-family: inherit; 
   cursor: pointer;
+  text-align: center;
+  &:hover {
+    background-color: #f0f0f0;
+  }
 `;
 
 const SocialIcons = styled.div`
@@ -112,7 +104,7 @@ function Footer() {
         </SocialIcons>
         <FooterInput type="text" placeholder="Nom" />
         <FooterInput type="email" placeholder="Adresse email" />
-        <FooterButton>Je m'abonne</FooterButton>
+        <FooterButton>Je m'abonne !</FooterButton>
       </FooterBlock>
       <FooterBlock>
         <FooterHeader>Besoin d’aide</FooterHeader>

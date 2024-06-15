@@ -7,7 +7,7 @@ const Section = styled.section`
 
 const Title = styled.h2`
   font-size: 2rem;
-  margin:30px 0 20px;
+  margin: 30px 0 20px;
   font-weight: normal;
   text-align: center;
 `;
@@ -43,6 +43,10 @@ const CardTitle = styled.div`
   font-size: 30px;
   letter-spacing: 1px;
   text-shadow: 0em 0em 0.2em #000000;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
 
 const FeatureSection = () => {
