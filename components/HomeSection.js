@@ -1,4 +1,6 @@
+import React from 'react';
 import styled from 'styled-components';
+import Link from 'next/link';
 
 const Section = styled.section`
   text-align: center;
@@ -49,27 +51,33 @@ const CardTitle = styled.div`
   transform: translate(-50%, -50%);
 `;
 
-const FeatureSection = () => {
+const HomeSection = () => {
   return (
     <Section>
       <Title> - TRADITION. FINESSE. MODERNITÉ. - </Title>
       <Subtitle>La foi de se sentir bien vêtement...</Subtitle>
       <Grid>
-        <Card>
-          <CardImage src="https://mudaparis.fr/wp-content/uploads/2024/03/ramadan-cadeau.jpg" alt="Idée Cadeau" />
-          <CardTitle>JABADOR</CardTitle>
-        </Card>
-        <Card>
-          <CardImage src="https://mudaparis.fr/wp-content/uploads/2024/03/ramadan-cadeau.jpg" alt="Collection Homme" />
-          <CardTitle>CAFTAN</CardTitle>
-        </Card>
-        <Card>
-          <CardImage src="https://mudaparis.fr/wp-content/uploads/2024/03/ramadan-cadeau.jpg" alt="Collection Enfant" />
-          <CardTitle>GRENOUILLIERE</CardTitle>
-        </Card>
+        <Link href="/category/6668867c84a7527dc418f85a">
+          <Card>
+            <CardImage src="https://mudaparis.fr/wp-content/uploads/2024/03/ramadan-cadeau.jpg" alt="Idée Cadeau" />
+            <CardTitle>JABADOR</CardTitle>
+          </Card>
+        </Link>
+        <Link href="/category/6668843543e1ae76261cffc1">
+          <Card>
+            <CardImage src="https://mudaparis.fr/wp-content/uploads/2024/03/ramadan-cadeau.jpg" alt="Collection Homme" />
+            <CardTitle>CAFTAN</CardTitle>
+          </Card>
+        </Link>
+        <Link href="/categories/6668843543e1ae76261cffc1">
+          <Card>
+            <CardImage src="https://mudaparis.fr/wp-content/uploads/2024/03/ramadan-cadeau.jpg" alt="Collection Enfant" />
+            <CardTitle>GRENOUILLIERE</CardTitle>
+          </Card>
+        </Link>
       </Grid>
     </Section>
   );
 };
 
-export default FeatureSection;
+export default HomeSection;
