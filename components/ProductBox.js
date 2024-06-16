@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Link from "next/link";
-import { useContext, useEffect, useState } from "react";
+import {  useState } from "react";
 import FlyingButton from "@/components/FlyingButton";
 import HeartOutlineIcon from "@/components/icons/HeartOutlineIcon";
 import HeartSolidIcon from "@/components/icons/HeartSolidIcon";
@@ -86,7 +86,7 @@ const WishlistButton = styled.button`
 `;
 
 export default function ProductBox({
-  _id, title, description, price, images, wished = false,
+  _id, title, price, images, wished = false,
   onRemoveFromWishlist = () => {},
 }) {
   const url = '/product/' + _id;

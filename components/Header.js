@@ -113,7 +113,7 @@ export default function Header() {
           </RightSideIcons>
 
           <StyledNav isOpen={isNavOpen}>
-            {/* Mettez ici vos liens de navigation */}
+            {}
           </StyledNav>
 
         </Wrapper>
