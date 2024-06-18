@@ -63,7 +63,7 @@ export default function AccountPage() {
     const data = { name, email, city, streetAddress, postalCode, country };
     axios.put('/api/address', data)
       .then(() => {
-        setSaveSuccess(true); // Indiquer que les données ont été sauvegardées
+        setSaveSuccess(true); 
       })
       .catch(error => {
         console.error('Erreur lors de la sauvegarde des données:', error);
@@ -72,10 +72,10 @@ export default function AccountPage() {
 
   useEffect(() => {
     if (!session) {
-      setLoading(false); // Mettre à false pour arrêter le chargement initial
+      setLoading(false); 
       return;
     }
-    setLoading(true); // Début du chargement
+    setLoading(true); 
 
     axios.get('/api/address')
       .then(response => {
@@ -90,7 +90,7 @@ export default function AccountPage() {
         console.error('Erreur lors de la récupération de l\'adresse:', error);
       })
       .finally(() => {
-        setLoading(false); // Fin du chargement
+        setLoading(false); 
       });
 
     axios.get('/api/wishlist')

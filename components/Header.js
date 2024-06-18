@@ -37,18 +37,18 @@ const StyledNav = styled.nav`
   gap: 15px;
   position: fixed;
   top: 0;
-  left: ${({ isOpen }) => (isOpen ? "0" : "-300px")}; /* Hide the nav initially */
+  left: ${({ isOpen }) => (isOpen ? "0" : "-300px")}; 
   bottom: 0;
-  width: 300px; /* Set the width of the off-canvas */
+  width: 300px; 
   background-color: #222;
-  transition: left 0.3s ease; /* Add smooth transition */
+  transition: left 0.3s ease; 
   z-index: 100;
 `;
 
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Align items vertically */
+  align-items: center; 
   padding: 20px 0;
   max-height: 40px;
 `;

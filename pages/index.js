@@ -16,7 +16,7 @@ export default function HomePage({featuredProduct,newProducts,wishedNewProducts}
   return (
     <div>
       <Header />
-      <HomeSection /> {/* Include the new component */}
+      <HomeSection /> {}
       <NewProducts products={newProducts} wishedProducts={wishedNewProducts} />
        <Footer />
     </div>
