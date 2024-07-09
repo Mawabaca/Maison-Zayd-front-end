@@ -27,7 +27,7 @@
     "react-is": "^16.8.0",
     "react-spinners": "^0.13.8",
     "react-sweetalert2": "^0.6.0",
-    "stripe": "^11.16.0",
+    "stripe": "^16.2.0",
     "styled-components": "^6.1.11",
     "sweetalert2": "^11.11.0",
     "typescript": "^5.4.5"
